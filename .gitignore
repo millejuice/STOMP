@@ -35,4 +35,4 @@ out/
 
 ### VS Code ###
 .vscode/
-/Users/juhyun/Downloads/CAPSTONE1/src/main/resources/application.properties
+/src/main/resources/application.properties

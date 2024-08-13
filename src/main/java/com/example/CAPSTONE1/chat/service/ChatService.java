@@ -8,6 +8,8 @@ import com.example.CAPSTONE1.chatRoom.repo.ChatRoomRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class ChatService {
@@ -17,6 +19,10 @@ public class ChatService {
     public Chat createChat(Long roomId, String sender, String senderEmail, String message){
         ChatRoom chatRoom = chatRoomRepo.findById(roomId).orElseThrow(IllegalArgumentException::new);
         return chatRepo.save(Chat.createChat(chatRoom, sender, senderEmail, message));
+    }
+
+    public List<Chat> findAllChatByRoomId(Long roomId){
+        return chatRepo.findAllById(roomId);
     }
 
 }
